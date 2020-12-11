@@ -23,7 +23,7 @@ public class SM4Utils {
         this.hexString = hexString;
     }
 
-    private String secretKey = "";
+    private String secretKey = "1234567887654321";
 
     public String getIv() {
         return iv;
@@ -33,7 +33,7 @@ public class SM4Utils {
         this.iv = iv;
     }
 
-    private String iv = "";
+    private String iv = "1234567887654321";
 
     private boolean hexString = false;
 
@@ -148,6 +148,12 @@ public class SM4Utils {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+        String text = "hello world";
+        String enstr = new SM4Utils().encryptData_CBC(text);
+        System.out.println(enstr);
     }
 
 
